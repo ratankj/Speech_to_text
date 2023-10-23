@@ -23,7 +23,7 @@ def index():
             return redirect(request.url)
         
 
-        file = request.file['audio_file']
+        file = request.files['audio_file']
 
         if file.filename == "":
             return redirect(request.url)
