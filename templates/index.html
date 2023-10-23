@@ -45,5 +45,60 @@
             background-color: #f9f9f9 ;
 
         }
-</head> 
+
+        form{
+            margin-bottom: 20px;
+
+        }
+
+        input[type="file"]{
+            padding:10px;
+            width:100%
+        }
+
+        button{
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%
+        }
+
+        h2{
+            margin-top :20px;
+        }
+
+        p{
+            margin: 10px 0;
+        }
+        </style>
+</head>
+<body>
+    <!-- HEADER SECTION (UNCHANGED)-->>
+    <header>
+        <h1>Speech to text</h1>
+    <header>
+    <!-- main contect SECTION (UNCHANGED)-->>
+    <div class="container">
+
+        <div calss = "uplad-column">
+            <h2>Upload Video</h2>
+            <form method="POST" enctype="multipart/form-data">
+                <input type="file" name="audio_file" accept=".mp3">
+                <button type = "submit" >convert</button>
+            </form>
+        </div>
+
+        <div calass = "output-column">
+            <h2>converted  text : </h2>
+            <div calss ="text-output">
+                <p>{{ text }}</p>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
 </html>

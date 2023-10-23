@@ -33,8 +33,14 @@ def index():
             file.save(audio_path)
 
             # convert audio to wav
-            wav_path = convert_audio_to_wav(audio_path)
+        wav_path = convert_audio_to_wav(audio_path)
 
             # convert wav data to text function
-            text =  convert_audio_to_text(wav_path)
-            return render_template()
+        text =  convert_audio_to_text(wav_path)
+        return render_template('index.html',text=text)
+    
+    return render_template('index.html',text=None)
+
+if __name__ == '__main__':
+    app.run(debug = True)
+        
