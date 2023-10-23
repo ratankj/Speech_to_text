@@ -1,0 +1,6 @@
+pandas
+numpy
+matplotlib
+pydub
+SpeechRecognition
+flask
