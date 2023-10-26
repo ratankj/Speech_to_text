@@ -1,14 +1,36 @@
 import os,sys
 from pydub import AudioSegment
-ALLOWED_EXTENTIONS = {'mp3','wav'}
+from exception import CustomException
+from logger import logging
 
-def convert_audio_to_wav(audio_path):
-    sound = AudioSegment.from_mp3(audio_path)
-    wav_path = audio_path.replace('.mp3','.wav')
+try:
+    ALLOWED_EXTENTIONS = {'mp3','wav'}
 
-    sound.export(wav_path, format = "wav")
+    logging.info(f"test data path, {ALLOWED_EXTENTIONS}")
 
-    return wav_path
+    def convert_audio_to_wav(audio_path):
+        sound = AudioSegment.from_mp3(audio_path)
+        wav_path = audio_path.replace('.mp3','.wav')
 
-def allowed_file(filename):
-    return '.' in filename and filename.rsplit('.',1)[1].lower() in ALLOWED_EXTENTIONS
+        logging.info(f"test data path, {wav_path}")
+
+        sound.export(wav_path, format = 'wav')
+
+        return wav_path
+
+
+
+
+    def allowed_file(filename):
+        check_result = '.' in filename and filename.rsplit('.',1)[1].lower() in ALLOWED_EXTENTIONS
+        print(f"print this {'.' in filename and filename.rsplit('.',1)[1].lower() in ALLOWED_EXTENTIONS}")
+        print(f"the result of this is : {check_result}")
+        logging.info(f"test data path, {check_result}")
+        
+        return '.' in filename and filename.rsplit('.',1)[1].lower() in ALLOWED_EXTENTIONS
+    
+    
+except Exception as e:
+            logging.info("in utils.py file")
+            raise CustomException(e,sys)
+    

@@ -1,4 +1,6 @@
 import speech_recognition as sr
+from exception import CustomException
+from logger import logging
 
 def convert_audio_to_text(audio_path):
 
